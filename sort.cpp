@@ -30,16 +30,16 @@ int main()
 
 	bool switchedSomething = true;
 
-	auto start = chrono::steady_clock::now();
+	auto start = chrono::steady_clock::now(); // get start time with chrono module
 
-	while(switchedSomething)
+	while(switchedSomething) // as long as there are numbers to sort we continue
 	{
-		switchedSomething = false;
+		switchedSomething = false; // exit condition
 		for(int i = 0; i<size-1; i++)
 		{
 			if(myArr[i] > myArr[i+1])
 			{
-				int temp = myArr[i];
+				int temp = myArr[i]; // switch number with its next number in the array
 				myArr[i] = myArr[i+1];
 				myArr[i+1] = temp;
 				switchedSomething = true;
@@ -47,8 +47,8 @@ int main()
 		}
 	}
 
-	auto end = chrono::steady_clock::now();
-	auto durationMs = chrono::duration_cast<chrono::milliseconds>(end-start).count();
+	auto end = chrono::steady_clock::now(); // get end time with chrono module
+	auto durationMs = chrono::duration_cast<chrono::milliseconds>(end-start).count(); // get the duration of the program (how quick it was)
 	auto durationSec = chrono::duration_cast<chrono::seconds>(end-start).count();
 
 	cout << "-----------------------------------------" << endl;
