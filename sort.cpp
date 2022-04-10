@@ -12,6 +12,13 @@ void printArray(int arr[], int size)
 	}
 }
 
+void swap(int *num1, int *num2)
+{
+	int temp = *num1;
+	*num1 = *num2;
+	*num2 = temp;
+}
+
 int main()
 {
 	cout << "Enter how many numbers do you want to sort: ";
@@ -38,9 +45,7 @@ int main()
 		{
 			if (myArr[i] > myArr[i + 1])
 			{
-				int temp = myArr[i]; // switch number with its next number in the array
-				myArr[i] = myArr[i + 1];
-				myArr[i + 1] = temp;
+				swap(&myArr[i], &myArr[i+1]);
 				switchedSomething = true;
 			}
 		}
