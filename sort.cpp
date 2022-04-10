@@ -2,6 +2,7 @@
 #include <string>
 #include <random>
 #include <chrono>
+#include <unistd.h>
 using namespace std;
 
 void printArray(int arr[], int size)
@@ -21,6 +22,7 @@ void swap(int *num1, int *num2)
 
 int main()
 {
+	srand(getpid());
 	cout << "Enter how many numbers do you want to sort: ";
 	int size;
 	cin >> size;
@@ -45,7 +47,7 @@ int main()
 		{
 			if (myArr[i] > myArr[i + 1])
 			{
-				swap(&myArr[i], &myArr[i+1]);
+				swap(&myArr[i], &myArr[i + 1]);
 				switchedSomething = true;
 			}
 		}
